@@ -9,7 +9,7 @@ function AccidentsPage() {
   return (
     <AccidentsList
       pageTitle="Accidents List"
-      dataUrl="http://localhost:5500/data/data"
+      dataUrl="https://accident-backend.onrender.com/data/data"
     />
   );
 }
@@ -18,7 +18,7 @@ function HistoryPage() {
   return (
     <HistoryList
       pageTitle="History Page"
-      dataUrl="http://localhost:5500/history/data"
+      dataUrl="https://accident-backend.onrender.com/history/data"
     />
   );
 }

@@ -33,15 +33,20 @@ function AccidentsList({ dataUrl }) {
   const handleDelete = async (itemId) => {
     try {
       const itemToDelete = data.find((item) => item._id === itemId);
-      await axios.post("http://localhost:5500/data/delete", { _id: itemId });
+      await axios.post("https://accident-backend.onrender.com/data/delete", {
+        _id: itemId,
+      });
       fetchData();
       console.log(`Item with ID ${itemId} deleted.`);
       if (itemToDelete) {
-        await axios.post("http://localhost:5500/history/history", {
-          accident: itemToDelete.accident,
-          location: itemToDelete.location,
-          date: itemToDelete.date,
-        });
+        await axios.post(
+          "https://accident-backend.onrender.com/history/history",
+          {
+            accident: itemToDelete.accident,
+            location: itemToDelete.location,
+            date: itemToDelete.date,
+          }
+        );
       }
     } catch (error) {
       console.error("Error deleting item:", error);
